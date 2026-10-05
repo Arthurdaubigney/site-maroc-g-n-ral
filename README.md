@@ -1,1 +1,1 @@
-# site-maroc-g-n-ral
+# site-maroc-general
