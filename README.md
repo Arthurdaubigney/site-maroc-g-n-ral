@@ -26,4 +26,4 @@ Définir la variable d'environnement `SITE_URL` (ex. `https://www.mondomaine.ma`
 
 ## Formulaire
 
-Chaque page contient un emplacement `#formulaire` (commentaire HTML dans `scripts/site/ui.mjs`, fonction `formSlot`) où coller le code du formulaire.
+Le formulaire Tally (`https://tally.so/r/LZQNAG`) est intégré sur chaque page via `formSlot` (`scripts/site/ui.mjs`). L'URL se change dans `scripts/site/config.mjs`.

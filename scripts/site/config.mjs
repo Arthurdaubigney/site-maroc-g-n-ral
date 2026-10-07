@@ -15,3 +15,7 @@ export const nav = [
 
 // Chemin SVG de l'arche (coordonnées normalisées 0..1) : arche outrepassée marocaine
 export const ARCH_PATH = 'M0.07,1 V0.56 C-0.03,0.34 0.12,0.13 0.5,0 C0.88,0.13 1.03,0.34 0.93,0.56 V1 Z';
+
+// Formulaire d'estimation (Tally)
+export const TALLY_URL = 'https://tally.so/r/LZQNAG';
+export const TALLY_EMBED = 'https://tally.so/embed/LZQNAG?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1';

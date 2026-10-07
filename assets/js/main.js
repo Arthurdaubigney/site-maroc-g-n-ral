@@ -32,6 +32,28 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  // Formulaire Tally : chargé à l'approche de l'écran
+  var tally = document.querySelectorAll('iframe[data-tally-src]');
+  if (tally.length) {
+    var loadTally = function () {
+      var fallback = function () {
+        tally.forEach(function (f) { if (!f.src) f.src = f.getAttribute('data-tally-src'); });
+      };
+      if (window.Tally) { window.Tally.loadEmbeds(); return; }
+      var sc = document.createElement('script');
+      sc.src = 'https://tally.so/widgets/embed.js';
+      sc.onload = function () { window.Tally ? window.Tally.loadEmbeds() : fallback(); };
+      sc.onerror = fallback;
+      document.body.appendChild(sc);
+    };
+    if ('IntersectionObserver' in window) {
+      var tio = new IntersectionObserver(function (entries) {
+        if (entries.some(function (e) { return e.isIntersecting; })) { tio.disconnect(); loadTally(); }
+      }, { rootMargin: '600px 0px' });
+      tally.forEach(function (f) { tio.observe(f); });
+    } else { loadTally(); }
+  }
+
   // Révélation au défilement
   var items = document.querySelectorAll('[data-reveal]');
   if (!('IntersectionObserver' in window)) {

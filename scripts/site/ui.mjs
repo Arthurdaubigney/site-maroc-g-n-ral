@@ -1,4 +1,4 @@
-import { NAME, SITE_URL, nav, ARCH_PATH } from './config.mjs';
+import { NAME, SITE_URL, nav, ARCH_PATH, TALLY_URL, TALLY_EMBED } from './config.mjs';
 
 /* ---------- Icônes (SVG ligne) ---------- */
 const svg = (inner, cls = 'h-6 w-6') => `<svg aria-hidden="true" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25">${inner}</svg>`;
@@ -141,20 +141,12 @@ export const formSlot = (title = 'Demande d’estimation', lead = 'Décrivez-nou
           <p class="eyebrow">Estimation gratuite &amp; confidentielle</p>
           <h2 class="mt-3 text-3xl sm:text-4xl">${title}</h2>
           <p class="mt-4 max-w-prose text-ink-500">${lead}</p>
-          <div class="mt-8" data-form-target>
-            <!--
-              ┌──────────────────────────────────────────────────────────┐
-              │ EMPLACEMENT DU FORMULAIRE                                │
-              │ Collez ici votre <form>…</form> ou le code d’intégration │
-              │ (Formspree, Netlify Forms, Tally, Google Forms, iframe…).│
-              │ Supprimez ensuite le bloc « form-slot__placeholder ».    │
-              └──────────────────────────────────────────────────────────┘
-            -->
-            <div class="form-slot__placeholder">
-              <p class="font-display text-2xl text-emerald-900">Le formulaire d’estimation prendra place ici</p>
-              <p class="mx-auto mt-3 max-w-md text-sm text-ink-500">Emplacement réservé au formulaire de contact et d’estimation, notre unique moyen de contact.</p>
-            </div>
+          <div class="relative mt-8 min-h-[420px]" data-form-target>
+            <p class="absolute inset-x-0 top-10 text-center text-sm text-ink-500" aria-hidden="true">Chargement du formulaire…</p>
+            <iframe data-tally-src="${TALLY_EMBED}" loading="lazy" width="100%" height="640" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire de demande d’estimation" class="relative"></iframe>
+            <noscript><p class="text-sm text-ink-700">Le formulaire nécessite JavaScript. <a class="text-bronze-700 underline underline-offset-4" href="${TALLY_URL}" rel="noopener noreferrer">Ouvrir le formulaire dans un nouvel onglet</a>.</p></noscript>
           </div>
+          <p class="mt-3 text-xs text-ink-500">Le formulaire ne s’affiche pas ? <a class="text-bronze-700 underline underline-offset-4" href="${TALLY_URL}" target="_blank" rel="noopener noreferrer">Ouvrez-le dans un nouvel onglet</a>.</p>
           <ul class="mt-8 grid gap-3 border-t border-bronze-500/25 pt-6 text-sm text-ink-700 sm:grid-cols-3">
             <li class="flex gap-2">${ic.check}Estimation gratuite</li>
             <li class="flex gap-2">${ic.check}Confidentialité absolue</li>

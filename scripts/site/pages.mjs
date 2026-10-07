@@ -547,12 +547,13 @@ export const mentionsPage = () => page({
         <div class="space-y-4 leading-relaxed text-ink-500">
           <h2 class="text-3xl text-ink-900 sm:text-4xl">Données personnelles</h2>
           <p>Les informations transmises via le formulaire (coordonnées, description et photographies des objets) sont utilisées uniquement pour étudier votre demande d’estimation et y répondre. Elles ne sont ni vendues ni communiquées à des tiers sans votre accord, et sont conservées le temps nécessaire au traitement de votre demande.</p>
+          <p>Le formulaire est fourni par le service Tally (${lnk('https://tally.so', 'tally.so', true)}), qui héberge les réponses transmises : son fonctionnement est régi par sa propre politique de confidentialité.</p>
           <p>Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition et de limitation du traitement de vos données. Pour l’exercer, utilisez le ${lnk('contact.html#formulaire', 'formulaire de contact')} en précisant l’objet de votre demande.</p>
           <p>Vous pouvez également introduire une réclamation auprès de la CNIL (${lnk('https://www.cnil.fr', 'cnil.fr', true)}).</p>
         </div>
         <div class="space-y-4 leading-relaxed text-ink-500">
           <h2 class="text-3xl text-ink-900 sm:text-4xl">Cookies et polices</h2>
-          <p>Ce site n’utilise aucun cookie de suivi ou de publicité. Les polices de caractères sont chargées depuis Google Fonts, ce qui peut transmettre votre adresse IP à ce service.</p>
+          <p>Ce site n’utilise aucun cookie de suivi ou de publicité. Les polices de caractères sont chargées depuis Google Fonts et le formulaire est chargé depuis Tally : ces services peuvent recevoir votre adresse IP lors de l’affichage de la page.</p>
         </div>
         <div class="space-y-4 leading-relaxed text-ink-500">
           <h2 class="text-3xl text-ink-900 sm:text-4xl">Responsabilité</h2>
