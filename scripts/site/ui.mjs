@@ -141,9 +141,8 @@ export const formSlot = (title = 'Demande d’estimation', lead = 'Décrivez-nou
           <p class="eyebrow">Estimation gratuite &amp; confidentielle</p>
           <h2 class="mt-3 text-3xl sm:text-4xl">${title}</h2>
           <p class="mt-4 max-w-prose text-ink-500">${lead}</p>
-          <div class="relative mt-8 min-h-[420px]" data-form-target>
-            <p class="absolute inset-x-0 top-10 text-center text-sm text-ink-500" aria-hidden="true">Chargement du formulaire…</p>
-            <iframe data-tally-src="${TALLY_EMBED}" loading="lazy" width="100%" height="640" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire de demande d’estimation" class="relative"></iframe>
+          <div class="mt-8" data-form-target>
+            <iframe data-tally-src="${TALLY_EMBED}" loading="lazy" width="100%" height="640" frameborder="0" marginheight="0" marginwidth="0" title="Formulaire de demande d’estimation"></iframe>
             <noscript><p class="text-sm text-ink-700">Le formulaire nécessite JavaScript. <a class="text-bronze-700 underline underline-offset-4" href="${TALLY_URL}" rel="noopener noreferrer">Ouvrir le formulaire dans un nouvel onglet</a>.</p></noscript>
           </div>
           <p class="mt-3 text-xs text-ink-500">Le formulaire ne s’affiche pas ? <a class="text-bronze-700 underline underline-offset-4" href="${TALLY_URL}" target="_blank" rel="noopener noreferrer">Ouvrez-le dans un nouvel onglet</a>.</p>
