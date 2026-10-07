@@ -13,7 +13,6 @@ module.exports = {
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        arabic: ['Amiri', 'serif'],
         sans: ['Jost', 'ui-sans-serif', 'system-ui', 'sans-serif']
       },
       letterSpacing: { eyebrow: '0.22em' },

@@ -34,7 +34,6 @@
   .bg-zellige-dark { background-image: var(--zellige-dark); background-size: 80px 80px; }
   .frieze { height: 28px; background: var(--frieze) repeat-x left center / auto 28px; }
   .arch { clip-path: url(#arch-clip); }
-  [lang="ar"] { font-family: 'Amiri', serif; letter-spacing: 0; white-space: nowrap; }
   .eyebrow { @apply font-sans text-xs font-medium uppercase tracking-eyebrow text-bronze-600; }
   .on-dark .eyebrow, .eyebrow-light { @apply text-bronze-400; }
   .container-x { @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12; }

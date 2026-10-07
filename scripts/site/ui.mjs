@@ -74,7 +74,7 @@ export const header = (cur) => `
         </span>
         <span class="leading-none">
           <span class="block whitespace-nowrap font-display text-2xl font-semibold tracking-tight text-emerald-900">Maison Volubilis</span>
-          <span class="mt-1 block text-[0.62rem] font-medium uppercase tracking-[0.38em] text-bronze-600">Antiquités · <span class="font-arabic text-[0.8rem] tracking-normal">المغرب</span></span>
+          <span class="mt-1 block text-[0.62rem] font-medium uppercase tracking-[0.38em] text-bronze-600">Antiquités</span>
         </span>
       </a>
       <nav aria-label="Navigation principale" class="hidden items-center gap-6 lg:flex xl:gap-8">
@@ -104,7 +104,6 @@ export const footer = (data) => `
       <div class="md:col-span-4">
         <p class="font-display text-3xl font-semibold text-champagne-50">Maison Volubilis</p>
         <p class="mt-1 text-[0.65rem] font-medium uppercase tracking-[0.38em] text-bronze-400">Antiquités</p>
-        <p class="font-arabic mt-4 text-2xl text-bronze-400" lang="ar" dir="rtl">أهلاً وسهلاً</p>
         <p class="mt-4 max-w-sm text-sm leading-relaxed">Maison d’expertise, d’estimation et de rachat d’antiquités et d’objets d’art, au Maroc et à l’international. Estimation gratuite, confidentielle et sans engagement.</p>
         <a href="contact.html#formulaire" class="btn-primary mt-6 !px-5 !py-3">Accéder au formulaire</a>
       </div>
@@ -247,7 +246,7 @@ export const page = ({ file, title, desc, body, schemas = [], ogImage = 'riad-ar
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230B3027'/%3E%3Cpolygon points='32,4 38,14 50,10 46,22 58,32 46,42 50,54 38,50 32,60 26,50 14,54 18,42 6,32 18,22 14,10 26,14' fill='%23C2A06A'/%3E%3Ctext x='32' y='39' font-family='Georgia,serif' font-size='18' text-anchor='middle' fill='%230B3027'%3EMV%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   ${ld.map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n  ')}

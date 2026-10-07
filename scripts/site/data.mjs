@@ -2,7 +2,7 @@
 
 export const cities = [
   {
-    id: 'casablanca', name: 'Casablanca', ar: 'الدار البيضاء', file: 'antiquaire-casablanca.html', photo: 'casablanca-hassan-ii', pos: 'object-[50%_30%]',
+    id: 'casablanca', name: 'Casablanca', file: 'antiquaire-casablanca.html', photo: 'casablanca-hassan-ii', pos: 'object-[50%_30%]',
     title: 'Antiquaire à Casablanca — Estimation et rachat à domicile',
     desc: 'Antiquaire à Casablanca : estimation gratuite et confidentielle, rachat de mobilier ancien, tableaux, bronzes, argenterie et objets d’art. Déplacement à domicile.',
     h1: 'Antiquaire à Casablanca : estimation et rachat à domicile',
@@ -27,7 +27,7 @@ export const cities = [
     ]
   },
   {
-    id: 'marrakech', name: 'Marrakech', ar: 'مراكش', file: 'antiquaire-marrakech.html', photo: 'marrakech-souk-lanternes', pos: '',
+    id: 'marrakech', name: 'Marrakech', file: 'antiquaire-marrakech.html', photo: 'marrakech-souk-lanternes', pos: '',
     title: 'Antiquaire à Marrakech — Estimation et rachat d’objets d’art',
     desc: 'Antiquaire à Marrakech : estimation gratuite et confidentielle de mobilier marocain, tapis berbères, bijoux, luminaires et objets d’art. Rachat à domicile, riads et villas.',
     h1: 'Antiquaire à Marrakech : estimation et rachat d’objets d’art',
@@ -52,7 +52,7 @@ export const cities = [
     ]
   },
   {
-    id: 'rabat', name: 'Rabat', ar: 'الرباط', file: 'antiquaire-rabat.html', photo: 'rabat-oudayas', pos: '',
+    id: 'rabat', name: 'Rabat', file: 'antiquaire-rabat.html', photo: 'rabat-oudayas', pos: '',
     title: 'Antiquaire à Rabat — Estimation et rachat d’antiquités',
     desc: 'Antiquaire à Rabat : estimation gratuite et confidentielle d’antiquités, tapis de Rabat, broderies, tableaux, argenterie et mobilier. Déplacement à domicile à Rabat et Salé.',
     h1: 'Antiquaire à Rabat : estimation et rachat d’antiquités',
@@ -77,7 +77,7 @@ export const cities = [
     ]
   },
   {
-    id: 'tanger', name: 'Tanger', ar: 'طنجة', file: 'antiquaire-tanger.html', photo: 'tanger-maison-bleue', pos: '',
+    id: 'tanger', name: 'Tanger', file: 'antiquaire-tanger.html', photo: 'tanger-maison-bleue', pos: '',
     title: 'Antiquaire à Tanger — Estimation et rachat d’objets d’art',
     desc: 'Antiquaire à Tanger : estimation gratuite et confidentielle de tableaux, mobilier, livres anciens, argenterie et objets de collection. Déplacement à domicile à Tanger.',
     h1: 'Antiquaire à Tanger : estimation et rachat d’objets d’art',
@@ -102,7 +102,7 @@ export const cities = [
     ]
   },
   {
-    id: 'fes', name: 'Fès', ar: 'فاس', file: 'antiquaire-fes.html', photo: 'fes-porte-bleue', pos: '',
+    id: 'fes', name: 'Fès', file: 'antiquaire-fes.html', photo: 'fes-porte-bleue', pos: '',
     title: 'Antiquaire à Fès — Estimation et rachat d’antiquités',
     desc: 'Antiquaire à Fès : estimation gratuite et confidentielle de poteries, broderies, cuivres, boiseries, bijoux et mobilier ancien. Déplacement à domicile à Fès et dans la médina.',
     h1: 'Antiquaire à Fès : estimation et rachat d’antiquités',
@@ -127,7 +127,7 @@ export const cities = [
     ]
   },
   {
-    id: 'agadir', name: 'Agadir', ar: 'أكادير', file: 'antiquaire-agadir.html', photo: 'agadir-plage', pos: '',
+    id: 'agadir', name: 'Agadir', file: 'antiquaire-agadir.html', photo: 'agadir-plage', pos: '',
     title: 'Antiquaire à Agadir — Estimation et rachat d’antiquités',
     desc: 'Antiquaire à Agadir : estimation gratuite et confidentielle de bijoux berbères, tapis, poteries, mobilier et objets d’art. Déplacement à domicile à Agadir, Taroudant et dans le Souss.',
     h1: 'Antiquaire à Agadir : estimation et rachat d’antiquités',

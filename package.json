@@ -4,7 +4,7 @@
   "private": true,
   "description": "Site vitrine de Maison Volubilis Antiquités — estimation et rachat d'antiquités au Maroc et à l'international.",
   "scripts": {
-    "build": "node scripts/build.mjs && tailwindcss -c tailwind.config.js -i ./src/input.css -o ./dist/assets/css/style.css --minify",
+    "build": "node scripts/build.mjs && tailwindcss -c tailwind.config.js -i ./src/input.css -o ./dist/assets/css/style.css --minify && node scripts/fingerprint.mjs",
     "dev": "node scripts/build.mjs && tailwindcss -c tailwind.config.js -i ./src/input.css -o ./dist/assets/css/style.css --watch"
   },
   "devDependencies": {

@@ -43,7 +43,7 @@ Observées sur les pages de résultats Google (requêtes : rachat antiquités Ma
 - Maillage interne : liens villes ↔ catégories ↔ guides, menu de pied de page par ville et par thème.
 - Balises Open Graph / Twitter, `robots.txt`, `sitemap.xml` et URLs canoniques générés à la compilation (voir « SITE_URL » ci-dessous).
 - Pages `mentions-legales` et `404` en `noindex`.
-- Textes alternatifs descriptifs sur toutes les images, images chargées en différé, `lang="ar"` sur les mentions arabes.
+- Textes alternatifs descriptifs sur toutes les images, images chargées en différé.
 
 > **SITE_URL** : le sitemap et les URLs canoniques sont générés à partir de la variable d'environnement `SITE_URL`
 > (ex. `https://www.votredomaine.ma`) ou, à défaut, de l'adresse de production Vercel. Définissez `SITE_URL` dans Vercel
@@ -57,7 +57,6 @@ Observées sur les pages de résultats Google (requêtes : rachat antiquités Ma
 | Haute | Connecter **Google Search Console** et soumettre `sitemap.xml` | Mesurer impressions, requêtes réelles et pages à renforcer |
 | Moyenne | Pages supplémentaires : **Meknès, Essaouira, Tétouan, Oujda, Kénitra, El Jadida** | Mêmes mécaniques que les six villes actuelles |
 | Moyenne | **Version anglaise** (`/en/`) : « antique dealer Morocco », « sell antiques Morocco », « Moroccan rug appraisal » | Clientèle internationale annoncée dans le positionnement |
-| Moyenne | **Version arabe** pour les requêtes locales (« بائع التحف في المغرب ») | Audience marocaine non francophone |
 | Moyenne | Obtenir des **liens entrants** : annuaires marocains (Telecontact, Pages-Maroc), presse déco, blogs patrimoine | Autorité du domaine |
 | Basse | Articles de fond : « reconnaître un vrai Beni Ouarain », « poinçons d'argent marocains », « entretenir un tapis ancien » | Longue traîne et autorité thématique |
 

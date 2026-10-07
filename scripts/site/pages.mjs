@@ -6,12 +6,12 @@ const cityById = Object.fromEntries(cities.map((c) => [c.id, c]));
 const slug = (s) => s.toLowerCase().replace(/è/g, 'e');
 
 /* ---------- Blocs partagés ---------- */
-const hero = ({ kicker, ar, h1, lead, crumbs, imgName, imgPos = '', ratio = 'aspect-[4/5]' }) => `
+const hero = ({ kicker, h1, lead, crumbs, imgName, imgPos = '', ratio = 'aspect-[4/5]' }) => `
     <section class="on-dark relative overflow-hidden bg-emerald-950 bg-zellige-dark" aria-labelledby="page-title">
       <div class="container-x grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-12">
         <div class="lg:col-span-7">
           ${crumbs ? `<div data-reveal class="mb-8">${crumbsHtml(crumbs)}</div>` : ''}
-          <p class="eyebrow flex items-center gap-3" data-reveal>${ar ? `<span class="font-arabic text-lg normal-case tracking-normal" lang="ar" dir="rtl">${ar}</span><span class="h-px w-8 bg-bronze-400/60"></span>` : ''}${kicker}</p>
+          <p class="eyebrow" data-reveal>${kicker}</p>
           <h1 id="page-title" class="mt-5 text-5xl font-medium leading-[1.04] tracking-tight text-champagne-50 sm:text-6xl" data-reveal style="--i:1">${h1}</h1>
           <p class="mt-8 max-w-xl text-lg leading-relaxed text-champagne-100/80" data-reveal style="--i:2">${lead}</p>
           <div class="mt-10 flex flex-col gap-4 sm:flex-row" data-reveal style="--i:3">
@@ -61,7 +61,6 @@ const cityCards = (list, { heading = 'Six villes, un même niveau d’exigence',
           ${list.map((c, k) => `<li data-reveal style="--i:${k % 3}">
             <a href="${c.file}" class="art-card group block aspect-[4/5]">
               ${img(c.photo, 'h-full w-full object-cover', { pos: c.pos })}
-              <span class="absolute right-5 top-4 z-10 font-arabic text-3xl text-champagne-50 drop-shadow" lang="ar" dir="rtl">${c.ar}</span>
               <div class="art-card__body">
                 <p class="eyebrow eyebrow-light">Antiquaire</p>
                 <h3 class="mt-1 font-display text-3xl text-champagne-50">${c.name}</h3>
@@ -131,7 +130,7 @@ export const home = () => page({
     <section class="on-dark relative overflow-hidden bg-emerald-950 bg-zellige-dark" aria-labelledby="hero-title">
       <div class="container-x grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-12 lg:py-24">
         <div class="lg:col-span-7">
-          <p class="eyebrow flex items-center gap-3" data-reveal><span class="font-arabic text-xl normal-case tracking-normal" lang="ar" dir="rtl">أهلاً وسهلاً</span><span class="h-px w-8 bg-bronze-400/60"></span>Antiquaire · Expertise · Rachat</p>
+          <p class="eyebrow" data-reveal>Antiquaire · Expertise · Rachat</p>
           <h1 id="hero-title" class="mt-6 text-5xl font-medium leading-[1.02] tracking-tight text-champagne-50 sm:text-6xl xl:text-7xl" data-reveal style="--i:1">
             L’expertise, l’estimation et le rachat d’<em class="font-medium italic text-bronze-400">antiquités</em> au Maroc.
           </h1>
@@ -157,7 +156,7 @@ export const home = () => page({
       </div>
       <div class="border-t border-champagne-100/10">
         <ul class="container-x grid grid-cols-3 gap-x-2 gap-y-5 py-7 text-center sm:grid-cols-6" aria-label="Villes d’intervention">
-          ${cities.map((c) => `<li><a href="${c.file}" class="group block"><span class="font-arabic block text-xl text-champagne-50 transition-colors sm:text-2xl duration-[250ms] group-hover:text-bronze-400" lang="ar" dir="rtl">${c.ar}</span><span class="mt-0.5 block text-[0.7rem] uppercase tracking-[0.22em] text-champagne-100/60">${c.name}</span></a></li>`).join('\n          ')}
+          ${cities.map((c) => `<li><a href="${c.file}" class="group block"><span class="block text-[0.72rem] uppercase tracking-[0.22em] text-champagne-100/80 transition-colors duration-[250ms] group-hover:text-bronze-400">${c.name}</span></a></li>`).join('\n          ')}
         </ul>
       </div>
     </section>
@@ -197,7 +196,7 @@ export const home = () => page({
           <div class="col-span-2 aspect-[3/4] overflow-hidden">${img('fes-porte-bleue')}</div>
         </div>
         <div class="lg:col-span-6 lg:pl-8">
-          <p class="eyebrow flex items-center gap-3" data-reveal><span class="font-arabic text-xl normal-case tracking-normal" lang="ar" dir="rtl">تراث</span><span class="h-px w-8 bg-bronze-500/60"></span>Un patrimoine à transmettre</p>
+          <p class="eyebrow" data-reveal>Un patrimoine à transmettre</p>
           <h2 id="ame-title" class="mt-4 text-4xl sm:text-5xl" data-reveal style="--i:1">De la médina au riad, des objets qui racontent le Maroc</h2>
           <div class="mt-6" data-reveal style="--i:2">${divider()}</div>
           <p class="mt-6 max-w-prose text-lg leading-relaxed text-ink-500" data-reveal style="--i:2">
@@ -269,7 +268,7 @@ export const objetsPage = () => page({
   desc: 'Mobilier ancien, tapis berbères, tableaux, bronzes, argenterie, bijoux et horlogerie : découvrez les pièces recherchées par la Maison Volubilis pour ses collectionneurs.',
   ogImage: 'tapis-medina',
   schemas: [faqJsonLd(objetsFaq), breadcrumb([['Accueil', 'index.html'], ['Objets recherchés', 'objets.html']])],
-  body: `${hero({ kicker: 'Objets recherchés', ar: 'كنوز', h1: 'Les pièces que recherchent nos collectionneurs', lead: 'Pour alimenter notre clientèle de collectionneurs, nous rachetons des objets d’art, du mobilier ancien et des pièces de collection, d’une pièce unique à une collection entière.', crumbs: [['Accueil', 'index.html'], ['Objets recherchés', 'objets.html']], imgName: 'salon-marocain-arche' })}
+  body: `${hero({ kicker: 'Objets recherchés', h1: 'Les pièces que recherchent nos collectionneurs', lead: 'Pour alimenter notre clientèle de collectionneurs, nous rachetons des objets d’art, du mobilier ancien et des pièces de collection, d’une pièce unique à une collection entière.', crumbs: [['Accueil', 'index.html'], ['Objets recherchés', 'objets.html']], imgName: 'salon-marocain-arche' })}
 
     <section class="section-y" aria-label="Catégories d’objets">
       <div class="container-x">
@@ -343,7 +342,7 @@ export const zonesPage = () => page({
   desc: 'Estimation et rachat d’antiquités à domicile à Casablanca, Marrakech, Rabat, Tanger, Fès, Agadir et sur tout le territoire marocain, ainsi qu’à l’international.',
   ogImage: 'fes-medina-vue',
   schemas: [breadcrumb([['Accueil', 'index.html'], ['Zones d’intervention', 'zones.html']])],
-  body: `${hero({ kicker: 'Zones d’intervention', ar: 'في كل المغرب', h1: 'Nous venons à vous, partout au Maroc', lead: 'Un déplacement à domicile est possible dans toutes les grandes villes du Royaume et sur l’ensemble du territoire, ainsi qu’à l’international. Vous n’avez rien à transporter : l’estimation se fait chez vous, gratuitement et sans engagement.', crumbs: [['Accueil', 'index.html'], ['Zones d’intervention', 'zones.html']], imgName: 'fes-medina-vue', ratio: 'aspect-[3/4]' })}
+  body: `${hero({ kicker: 'Zones d’intervention', h1: 'Nous venons à vous, partout au Maroc', lead: 'Un déplacement à domicile est possible dans toutes les grandes villes du Royaume et sur l’ensemble du territoire, ainsi qu’à l’international. Vous n’avez rien à transporter : l’estimation se fait chez vous, gratuitement et sans engagement.', crumbs: [['Accueil', 'index.html'], ['Zones d’intervention', 'zones.html']], imgName: 'fes-medina-vue', ratio: 'aspect-[3/4]' })}
 
 ${cityCards(cities, { heading: 'Six villes, un même niveau d’exigence', eyebrow: 'Principales villes' })}
 
@@ -389,7 +388,7 @@ export const aProposPage = () => page({
   desc: 'Découvrez la Maison Volubilis Antiquités : la passion des objets anciens, une éthique exigeante, une discrétion absolue et un réseau d’acheteurs collectionneurs.',
   ogImage: 'lanterne',
   schemas: [breadcrumb([['Accueil', 'index.html'], ['La Maison', 'a-propos.html']])],
-  body: `${hero({ kicker: 'La Maison', ar: 'ميزون فولوبيليس', h1: 'Une passion pour les objets qui ont une histoire', lead: 'Maison Volubilis Antiquités est une maison d’expertise, d’estimation et de rachat d’antiquités et d’objets d’art, qui intervient au Maroc et à l’international.', crumbs: [['Accueil', 'index.html'], ['La Maison', 'a-propos.html']], imgName: 'lanterne' })}
+  body: `${hero({ kicker: 'La Maison', h1: 'Une passion pour les objets qui ont une histoire', lead: 'Maison Volubilis Antiquités est une maison d’expertise, d’estimation et de rachat d’antiquités et d’objets d’art, qui intervient au Maroc et à l’international.', crumbs: [['Accueil', 'index.html'], ['La Maison', 'a-propos.html']], imgName: 'lanterne' })}
 
     <section class="section-y" aria-labelledby="histoire-title">
       <div class="container-x grid gap-14 lg:grid-cols-12">
@@ -456,7 +455,7 @@ export const contactPage = () => page({
   body: `
     <section class="on-dark bg-emerald-950 bg-zellige-dark" aria-labelledby="page-title">
       <div class="container-x py-20 sm:py-24">
-        <p class="eyebrow flex items-center gap-3" data-reveal><span class="font-arabic text-lg normal-case tracking-normal" lang="ar" dir="rtl">تواصل معنا</span><span class="h-px w-8 bg-bronze-400/60"></span>Contact &amp; estimation</p>
+        <p class="eyebrow" data-reveal>Contact &amp; estimation</p>
         <h1 id="page-title" class="mt-5 max-w-3xl text-5xl font-medium leading-[1.04] tracking-tight text-champagne-50 sm:text-6xl" data-reveal style="--i:1">Faites estimer vos objets, en toute confiance</h1>
         <p class="mt-8 max-w-2xl text-lg leading-relaxed text-champagne-100/80" data-reveal style="--i:2">L’estimation est gratuite, confidentielle et sans engagement. Un déplacement à domicile est possible au Maroc comme à l’international.</p>
       </div>
@@ -572,7 +571,7 @@ export const cityPage = (c) => {
   return page({
     file: c.file, title: c.title, desc: c.desc, ogImage: c.photo,
     schemas: [faqJsonLd(c.faq), breadcrumb(trail), serviceLd(`Estimation et rachat d’antiquités à ${c.name}`, c.desc, c.name)],
-    body: `${hero({ kicker: `Antiquaire à ${c.name}`, ar: c.ar, h1: c.h1, lead: c.lead, crumbs: trail, imgName: c.photo, imgPos: c.pos })}
+    body: `${hero({ kicker: `Antiquaire à ${c.name}`, h1: c.h1, lead: c.lead, crumbs: trail, imgName: c.photo, imgPos: c.pos })}
 
     <section class="section-y" aria-labelledby="intro-title">
       <div class="container-x grid gap-12 lg:grid-cols-12">
@@ -630,7 +629,7 @@ ${faqBlock(c.faq, { title: `Antiquaire à ${c.name} : vos questions`, eyebrow: `
         <p class="eyebrow" data-reveal>Autres villes</p>
         <h2 id="autres-villes-title" class="mt-4 text-3xl sm:text-4xl" data-reveal style="--i:1">Nous intervenons aussi à</h2>
         <ul class="mt-8 grid grid-cols-2 gap-px border border-bronze-500/30 bg-bronze-500/30 sm:grid-cols-5">
-          ${others.map((o) => `<li class="bg-champagne-50"><a href="${o.file}" class="group block px-5 py-6 text-center transition-colors duration-[250ms] hover:bg-champagne-100"><span class="font-arabic block text-2xl text-emerald-900" lang="ar" dir="rtl">${o.ar}</span><span class="mt-1 block text-xs uppercase tracking-[0.2em] text-bronze-700">${o.name}</span></a></li>`).join('\n          ')}
+          ${others.map((o) => `<li class="bg-champagne-50"><a href="${o.file}" class="group block px-5 py-6 text-center transition-colors duration-[250ms] hover:bg-champagne-100"><span class="block text-xs uppercase tracking-[0.2em] text-emerald-900">${o.name}</span></a></li>`).join('\n          ')}
         </ul>
       </div>
     </section>
@@ -700,7 +699,7 @@ ${faqBlock(c.faq, { title: 'Vos questions', eyebrow: c.short, id: 'faq-cat' })}
         <p class="eyebrow" data-reveal>Près de chez vous</p>
         <h2 id="villes-cat-title" class="mt-4 text-3xl sm:text-4xl" data-reveal style="--i:1">Estimation à domicile</h2>
         <ul class="mt-8 flex flex-wrap gap-3" data-reveal style="--i:2">
-          ${cities.map((o) => `<li><a href="${o.file}" class="inline-flex items-center gap-3 border border-bronze-500/50 px-5 py-3 text-emerald-900 transition-colors duration-[250ms] hover:bg-emerald-900 hover:text-champagne-50"><span class="font-arabic text-xl" lang="ar" dir="rtl">${o.ar}</span><span class="text-sm uppercase tracking-[0.16em]">${o.name}</span></a></li>`).join('\n          ')}
+          ${cities.map((o) => `<li><a href="${o.file}" class="inline-flex items-center gap-3 border border-bronze-500/50 px-5 py-3 text-emerald-900 transition-colors duration-[250ms] hover:bg-emerald-900 hover:text-champagne-50"><span class="text-sm uppercase tracking-[0.16em]">${o.name}</span></a></li>`).join('\n          ')}
         </ul>
       </div>
     </section>
@@ -755,7 +754,6 @@ export const notFoundPage = () => page({
   body: `
     <section class="on-dark bg-emerald-950 bg-zellige-dark">
       <div class="container-x flex min-h-[60vh] flex-col items-start justify-center py-24">
-        <p class="font-arabic text-4xl text-bronze-400" lang="ar" dir="rtl">الصفحة غير موجودة</p>
         <h1 class="mt-4 text-5xl font-medium text-champagne-50 sm:text-6xl">Cette page est introuvable</h1>
         <p class="mt-6 max-w-lg text-lg text-champagne-100/80">Le lien que vous avez suivi n’existe plus ou a été déplacé.</p>
         <div class="mt-10 flex flex-col gap-4 sm:flex-row"><a href="index.html" class="btn-primary">Retour à l’accueil</a><a href="contact.html#formulaire" class="btn-outline-light">Demander une estimation</a></div>
