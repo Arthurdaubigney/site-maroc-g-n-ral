@@ -761,3 +761,48 @@ export const notFoundPage = () => page({
       </div>
     </section>`
 });
+
+/* =====================================================================
+   MERCI (page de confirmation — non liée depuis le site, non indexée)
+   Déclenchée après l'envoi du formulaire ; sert au suivi des conversions Google Ads.
+   ===================================================================== */
+export const merciPage = () => page({
+  file: 'merci.html',
+  title: `Demande bien reçue | ${NAME}`,
+  desc: 'Votre demande d’estimation a bien été prise en compte.',
+  robots: 'noindex, nofollow, noarchive',
+  headExtra: `<script>if (window.top !== window.self) { window.top.location.replace(window.location.href); }</script>
+  <!--
+    GOOGLE ADS — SUIVI DE CONVERSION
+    Collez ici, dans cet ordre :
+      1. la balise Google (gtag.js) de votre compte Google Ads ;
+      2. l'extrait « événement de conversion » (gtag('event', 'conversion', {...})).
+    Cette page ne se charge qu'après l'envoi du formulaire : chaque chargement = une conversion.
+    Si vous ajoutez un suivi, mettez aussi à jour la rubrique « Cookies » des mentions légales
+    et prévoyez un bandeau de consentement.
+  -->`,
+  body: `
+    <section class="on-dark relative overflow-hidden bg-emerald-950 bg-zellige-dark" aria-labelledby="page-title">
+      <div class="container-x grid items-center gap-12 py-20 sm:py-28 lg:grid-cols-12">
+        <div class="lg:col-span-7">
+          <div class="relative flex h-20 w-20 items-center justify-center text-bronze-500" data-reveal>${star8('absolute inset-0 h-full w-full')}<span class="relative text-emerald-950">${ic.check.replace('mt-0.5 h-5 w-5 shrink-0 text-bronze-600', 'h-8 w-8').replace('stroke-width="1.5"', 'stroke-width="2.2"')}</span></div>
+          <p class="eyebrow mt-8" data-reveal style="--i:1">Demande d’estimation</p>
+          <h1 id="page-title" class="mt-4 text-5xl font-medium leading-[1.04] tracking-tight text-champagne-50 sm:text-6xl" data-reveal style="--i:2">Merci, votre demande a bien été prise en compte</h1>
+          <p class="mt-8 max-w-xl text-lg leading-relaxed text-champagne-100/80" data-reveal style="--i:3">Nous avons bien reçu votre formulaire et vos informations. Notre expert va étudier votre objet avec soin, en toute confidentialité.</p>
+          <ul class="mt-8 max-w-xl space-y-3 text-champagne-100/90" data-reveal style="--i:4">
+            <li class="flex gap-3">${ic.check.replace('text-bronze-600', 'text-bronze-400')}Il est inutile de renvoyer le formulaire : une seule demande suffit.</li>
+            <li class="flex gap-3">${ic.check.replace('text-bronze-600', 'text-bronze-400')}Merci de ne pas envoyer plusieurs fois la même demande : cela crée des doublons.</li>
+            <li class="flex gap-3">${ic.check.replace('text-bronze-600', 'text-bronze-400')}Votre demande reste strictement confidentielle, gratuite et sans engagement.</li>
+          </ul>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row" data-reveal style="--i:5">
+            <a href="index.html" class="btn-primary">Retour à l’accueil</a>
+            <a href="objets.html" class="btn-outline-light">Découvrir les objets recherchés</a>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-sm lg:col-span-5 lg:max-w-md" data-reveal style="--i:2">
+          ${archFrame(img('the-menthe-theiere', 'h-full w-full object-cover', { eager: true }), 'aspect-[3/4]')}
+        </div>
+      </div>
+    </section>
+    ${frieze()}`
+});

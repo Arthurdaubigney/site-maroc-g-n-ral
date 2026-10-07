@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { SITE_URL } from './site/config.mjs';
 import { page } from './site/ui.mjs';
 import { cities, categories, guides } from './site/data.mjs';
-import { home, objetsPage, zonesPage, aProposPage, contactPage, mentionsPage, cityPage, categoryPage, guidePage, notFoundPage } from './site/pages.mjs';
+import { home, objetsPage, zonesPage, aProposPage, contactPage, mentionsPage, cityPage, categoryPage, guidePage, notFoundPage, merciPage } from './site/pages.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -26,6 +26,7 @@ const pages = [
   ...categories.map((c) => [c.file, categoryPage(c), 0.8]),
   ...guides.map((g) => [g.file, guidePage(g), 0.7]),
   ['mentions-legales.html', mentionsPage(), null],
+  ['merci.html', merciPage(), null],
   ['404.html', notFoundPage(), null]
 ];
 

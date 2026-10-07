@@ -32,6 +32,12 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
+  // Formulaire Tally : redirection vers la page de confirmation (suivi des conversions)
+  window.addEventListener('message', function (e) {
+    if (e.origin !== 'https://tally.so' || typeof e.data !== 'string') return;
+    if (e.data.indexOf('Tally.FormSubmitted') !== -1) { window.location.assign('/merci'); }
+  });
+
   // Formulaire Tally : chargé à l'approche de l'écran
   var tally = document.querySelectorAll('iframe[data-tally-src]');
   if (tally.length) {

@@ -214,7 +214,7 @@ const orgJsonLd = {
   ...(SITE_URL ? { url: SITE_URL } : {})
 };
 
-export const page = ({ file, title, desc, body, schemas = [], ogImage = 'riad-arche', noindex = false }) => {
+export const page = ({ file, title, desc, body, schemas = [], ogImage = 'riad-arche', noindex = false, robots = '', headExtra = '' }) => {
   const url = SITE_URL ? `${SITE_URL}/${file === 'index.html' ? '' : file}` : '';
   const ld = [orgJsonLd, ...schemas];
   return `<!DOCTYPE html>
@@ -224,7 +224,8 @@ export const page = ({ file, title, desc, body, schemas = [], ogImage = 'riad-ar
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title}</title>
   <meta name="description" content="${desc}">
-  ${noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}
+  ${headExtra}
+  ${robots ? `<meta name="robots" content="${robots}">` : noindex ? '<meta name="robots" content="noindex, follow">' : '<meta name="robots" content="index, follow, max-image-preview:large">'}
   <meta name="theme-color" content="#0B3027">
   ${url ? `<link rel="canonical" href="${url}">\n  <meta property="og:url" content="${url}">` : ''}
   <meta property="og:type" content="website">
